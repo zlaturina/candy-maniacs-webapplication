@@ -1,0 +1,269 @@
+/*------------------------------------------------------------------------------*/
+
+/*HUVUDINNEHÅLL*/
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    width: 100px;
+}
+
+.menubar {
+    grid-area: nav;
+    display: flex;
+    background-color: #f592dc;
+    justify-content: flex-end;
+    text-align: center;
+    padding: 10px;
+}
+
+.menubar .flex-item-1, .flex-item-2, .flex-item-3 {
+    display: flex;
+    background-color: #f592dc;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.menubar .flex-item-1:hover, .flex-item-2:hover, .flex-item-3:hover {
+    padding: 2px 1px;
+    margin: 1px;
+    background-color: #f8cde8;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 2px;
+    width: 30%;
+    margin: 0;
+}
+
+/*GRID*/
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header' 'nav nav nav nav' 'main main main aside' 'footer footer footer footer';
+}
+
+header {
+    grid-area: header;
+    padding: 10px;
+    text-align: start;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+    background-color: rgb(248, 246, 100);
+    padding: 10px;
+    min-width: 200px;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    padding: 10px;
+    text-align: center;
+}
+
+/*MEDIAQUARRIES*/
+@media screen and (max-width:600px) {
+    header {
+        text-align: end;
+    }
+    .flex-container {
+        flex-direction:row;
+        padding:0 10px;
+    }
+    .main-sidinnehåll {
+        flex-direction: column;
+    }    
+    .grid-container {
+        grid-template-areas: 'header header header header' 'nav nav nav nav' 'aside aside aside aside' 'main main main main' 'footer footer footer footer';
+    }
+    .menubar {
+        grid-area: nav;
+        display: flex;
+        background-color: #f592dc;
+        justify-content: flex-start;
+        text-align: center;
+        padding:10px 2px 10px 20px;
+        margin:0;
+    }
+    
+    .flex-item-1, .flex-item-2{
+        padding:0 5px;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .side {
+        height: auto;
+    }
+}
+
+/*--------------------------------------------------------------------*/
+
+/*STARTSIDA*/
+
+.main-sidinnehåll {
+    grid-area: main;
+    display: flex;
+    background-color: white;
+    justify-content: flex-start;
+}
+
+.godissortiment {
+    display: flex;
+    flex: 3 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}
+
+.img {
+    flex-direction: row;
+    align-self: center;
+    max-width: 80%;
+}
+
+.img1 {
+    flex-direction: row;
+    align-self: center;
+    max-width: 100%;
+}
+
+.side {
+    grid-area: aside;
+    display: flex;
+    flex: 1 1 25%;
+    background-color: #88d6f5;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer {
+    background-color: #6ef861;
+    height: 100px;
+}
+
+.footer-text {
+    text-align: center;
+    padding: 3px
+}
+
+/*-----------------------------------------------------------------------*/
+
+/*CONTACT*/
+
+.contact-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+
+.pic {
+    float: left;
+    width: 50%;
+    padding: 3px;
+    margin: 3px;
+}
+
+.pic img {
+    max-width: 60%;
+}
+
+.contact-info {
+    padding: 3px;
+    margin: 3px;
+    text-align: justify;
+}
+
+.card {
+    background-color: rgb(178, 199, 192);
+    padding: 10px 0;
+    margin: 5px;
+}
+
+.card::after {
+    content: "";
+    display: flex;
+    clear: both;
+}
+
+/*--------------------------------------------------------------------*/
+
+/*PRODUCT*/
+
+.prod-menubar {
+    display: grid;
+    justify-content: end;
+}
+
+.menu-container {
+    display: grid;
+    align-content: space-between;
+    grid-auto-flow: column;
+    padding: 10px 2px;
+    width: 30%;
+    margin: 5px;
+}
+
+.table-container {
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    width: 95%;
+    border: blueviolet;
+}
+
+caption {
+    font: large;
+    font-size: 25px;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.table-header {
+    padding: 20px;
+    margin: 5px;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+.items {
+    padding: 10px 0;
+    margin: 5px;
+}
+
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
+    padding: 20px 0;
+    height: 200px;
+}
+
